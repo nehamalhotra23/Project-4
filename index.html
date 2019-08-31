@@ -2,46 +2,53 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Concert+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
   <script src="js/jquery-3.4.1.js"></script>
   <script src="js/scripts.js"></script>
-  <title>Macc Pizza</title>
+  <title>Pizza</title>
 </head>
 
 <body>
   <div class="container">
-  <h1 id="pageTitle">MAAC PIZZA</h1>
-
-     <div id="main">
-<div id="Pizza">
-    <h2>Pizza</h2>
-    <h4>Size of the pizza</h4>
-    <select class="selectpicker" id="size">
-      <option value="">select size</option>
-      <option id="large" value="Large">Large</option>
-      <option id="med" value="Medium">Medium</option>
-      <option id="reg" value="Regular">Regular</option>
-    </select>
-</div>
-
-    <h4>Extra toppings</h4>
-    <div id="topp">
-    <select class="selectpicker" id="topping">
-      <option val="">Extra toppings if you want</option>
-      <option id="chee" val="Cheese">Cheese</option>
-      <option id="pepp" val="Pepperoni">Pepperoni</option>
-      <option id="arti" val="Artichoke">Artichoke</option>
-</select>
+    <div class="col-lg-12">
+      <div id="title">
+        <h1>MACC PIZZA</h1>
+        <img src="images/pizza.jpg" alt="A picture of pizza">
+      </div>
+      <form class="formOne" action="index.html" method="post">
+        <div id="Pizza">
+          <h2>Select a size and topping of your choice</h2>
+          <h4>Size of the pizza</h4>
+          <div class="form-group">
+            <select class="form-control" id="size">
+              <option value=0>select size</option>
+              <option value=20>Large with cheese $20</option>
+              <option value=15>Medium With Cheese $15</option>
+              <option value=10>Regular With Cheese $10</option>
+            </select>
+          </div>
+        </div>
+        <h4>Extra toppings</h4>
+        <div id="topp">
+          <div class="form-group">
+            <select class="form-control" id="topping">
+              <option value=0>Extra toppings if you want</option>
+              <option value=2>Sausage</option>
+              <option value=3>Pepperoni</option>
+              <option value=4>Artichoke</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" id="placeOrder" class="btn btn-danger" name="button">Place Order</button>
+      </form>
+      <div id="receipt">
+        <p id="totalPrice">
+        </p>
+      </div>
+    </div>
   </div>
-    <button type="button" id="placeOrder" name="button">Place Order</button>
-</div>
-<div id="checkout">
-  <h1>Total Price:</h1>
-  <ul id="totalprice">
-  </ul>
-
-</div>
 </body>
 
 </html>

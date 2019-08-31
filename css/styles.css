@@ -1,4 +1,30 @@
 #placeOrder {
   margin: 30px;
+}
 
+#title {
+  margin-left: 380px;
+}
+
+h2 {
+  margin-top: 30px;
+  font-weight: bold;
+  color: red;
+  font-family: 'Concert One', cursive;
+}
+
+#totalPrice {
+  font-weight: bold;
+  font-size: 30px;
+  font-family: 'Concert One', cursive;
+}
+
+h4 {
+  margin-top: 20px;
+  font-family: 'Concert One', cursive;
+}
+
+h1 {
+  font-family: 'Concert One', cursive;
+  
 }

@@ -1,39 +1,36 @@
 //Backend Logic
 var sIze;
 var extraTopping;
-var newOrder = new Pizza();
-var toppingsText;
+var cost;
+var newOrder;
+var sizeText;
 
-function Pizza() {
-  this.size = sIze;
-  this.price = 0;
+function Pizza(size, topping) {
+  this.size = size;
+  this.topping = topping;
+
 };
 Pizza.prototype.calculateTotal = function() {
-  this.price += 0;
-  return this.price;
-
+  return sIze + extraTopping;
 }
 //User Interface
 
 $(document).ready(function() {
-  $("#placeOrder").click(function(event) {
+  $(".formOne").submit(function(event) {
+    $("#receipt").show();
     event.preventDefault()
-    sIze = $("#size").val();
-    extraTopping = $("#topping").val();
-    this.sIze = size;
+    sIze = parseInt($("select#size").val());
+    sizeText = $("select#size").val();
+    extraTopping = parseInt($("select#topping").val());
+    newOrder = new Pizza(sIze, extraTopping);
+    cost = newOrder.calculateTotal();
+    $("#totalPrice").text("Your total order price is:" + " " + "$" + cost);
 
-    if (extraTopping === "Cheese" || extraTopping === "Pepperoni" || extraTopping === "Artichoke" && sIze === "Large") {
-      this.price = 10;
-      $("#totalprice").text(sIze + " " + extraTopping + " " + "$" + this.price);
-    } else if (extraTopping === "Pepperoni" || extraTopping === "Artichoke" || extraTopping === "Cheese" && sIze === "Medium") {
-      this.price = 15;
-      $("#totalprice").text(sIze + " " + extraTopping + " " + "$" + this.price);
-    } else if (extraTopping === "Pepperoni" || extraTopping === "Artichoke" || extraTopping === "Cheese" && sIze === "Regular") {
-      this.price = 20;
-      $("#totalprice").text(sIze + " " + extraTopping + " " + "$" + this.price);
+    if (sIze === 0 && extraTopping === 0) {
+      alert('Please select a size of pizza and topping');
+    } else if (sIze === 20 || sIze === 15 || sIze === 10 && extraTopping === 0) {
+      $("select#size").val();
     }
-    return this.price;
-
-  });
+  })
 
 });
