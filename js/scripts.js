@@ -1,17 +1,10 @@
-//Backend Logic
-var sIze;
-var extraTopping;
-var cost;
-var newOrder;
-var sizeText;
-
 function Pizza(size, topping) {
   this.size = size;
   this.topping = topping;
-
+  this.total = 0;
 };
 Pizza.prototype.calculateTotal = function() {
-  return sIze + extraTopping;
+  this.total = this.size + this.topping;
 }
 //User Interface
 
@@ -19,12 +12,12 @@ $(document).ready(function() {
   $(".formOne").submit(function(event) {
     $("#receipt").show();
     event.preventDefault()
-    sIze = parseInt($("select#size").val());
-    sizeText = $("select#size").val();
-    extraTopping = parseInt($("select#topping").val());
-    newOrder = new Pizza(sIze, extraTopping);
-    cost = newOrder.calculateTotal();
-    $("#totalPrice").text("Your total order price is:" + " " + "$" + cost);
+    var sIze = parseInt($("select#size").val());
+    var sizeText = $("select#size").val();
+    var extraTopping = parseInt($("select#topping").val());
+    var newOrder = new Pizza(sIze, extraTopping);
+    newOrder.calculateTotal();
+    $("#totalPrice").text("Your total order price is:" + " " + "$" + newOrder.total);
 
     if (sIze === 0 && extraTopping === 0) {
       alert('Please select a size of pizza and topping');
