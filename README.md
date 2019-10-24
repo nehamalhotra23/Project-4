@@ -10,7 +10,7 @@ _Users can select the Size of pizza and add topping of their choice. At checkout
 
 ## Setup/Installation Requirements
 
-* _Live Site This Project on: https_
+* _To View the Live site got to: https://nehamalhotra23.github.io/Project-4/_
 * _Git clone: https://github.com/nehamalhotra23/Project-4_
 * _Open in any text editor of your choice._
 
